@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
 
         NSDate *now = [NSDate date];
         NSLog(@"\nThis NSDate object lives at %p", now);
-        
+        NSLog(@"\nThe date is %@", now);
         NSLog(@"\nHello, World!");
     }
     return 0;
