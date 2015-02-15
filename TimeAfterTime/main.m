@@ -11,7 +11,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        NSDate *now = [NSDate date];
+        NSDate *now = [[NSDate alloc] init];
+        
         NSLog(@"\nThis NSDate object lives at %p", now);
         NSLog(@"\nThe date is %@", now);
         
@@ -24,6 +25,11 @@ int main(int argc, const char * argv[]) {
         NSCalendar *cal = [NSCalendar currentCalendar];
         NSLog(@"\nMy calendar is %@", [cal calendarIdentifier]);
         
-    }
+        unsigned long day = [cal ordinalityOfUnit:NSCalendarUnitDay
+                                           inUnit:NSCalendarUnitMonth
+                                          forDate:now];
+        NSLog(@"\nThis is day %lu of the month", day);
+        
+        }
     return 0;
 }
