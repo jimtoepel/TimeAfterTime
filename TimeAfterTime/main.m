@@ -18,16 +18,11 @@ int main(int argc, const char * argv[]) {
         double seconds = [now timeIntervalSince1970];
         NSLog(@"\nIt has been %.0f seconds since the start of 1970.", seconds);
         
-        
-        // Sending bogus messages to see errors...
-        double testSeconds = [NSDate timeIntervalSince1970];
-        NSDate *testNow = [now date];
-        
-        // Mistype selector name
-        testSeconds = [now fooIntervalSince1970];
-        
-        // Typo!
-        testSeconds = [now timeintervalsince1970];
+        NSDate *later = [now dateByAddingTimeInterval:100000];
+        NSLog(@"\nIn 100,000 seconds it will be %@", later);
+
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        NSLog(@"\nMy calendar is %@", [cal calendarIdentifier]);
         
     }
     return 0;
