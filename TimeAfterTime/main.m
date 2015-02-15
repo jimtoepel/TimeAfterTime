@@ -14,7 +14,9 @@ int main(int argc, const char * argv[]) {
         NSDate *now = [NSDate date];
         NSLog(@"\nThis NSDate object lives at %p", now);
         NSLog(@"\nThe date is %@", now);
-        NSLog(@"\nHello, World!");
+        
+        double seconds = [now timeIntervalSince1970];
+        NSLog(@"\nIt has been %.0f seconds since the start of 1970.", seconds);
     }
     return 0;
 }
